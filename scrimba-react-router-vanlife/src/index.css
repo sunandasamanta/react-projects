@@ -1,1 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
 @import "tailwindcss";
+
+@theme {
+  /* Your custom theme settings here */
+
+  /* Custom color */
+  --color-light: #fff7ed;
+  --color-nav: #4D4D4D;
+  --color-dark: #161616;
+
+  /* Font */
+  --font-sans: 'Inter', sans-serif;
+
+  /* Custom font-size */
+  --text-xs: 0.75rem;
+  --text-sm: 1rem;
+  --text-base: 1.25rem;
+  --text-lg: 1.5rem;
+  --text-xl: 2rem;
+  --text-2xl: 2.25rem;
+  --text-3xl: 2.5rem;
+  --text-4xl: 3rem;
+  --text-5xl: 3.5rem;
+  --text-6xl: 4rem;
+  --text-7xl: 4.5rem;
+  --text-8xl: 5rem;
+  --text-9xl: 6rem;
+
+  /* Background Image */
+  --background-image-hero-hill: url('./vanlife-image-53.png');
+
+}
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+  body {
+    @apply bg-light font-sans;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-lg bg-dark text-white;
+  }
+  .active-nav-item {
+    @apply text-dark underline font-bold duration-300;
+  }
+  .hero {
+    @apply bg-hero-hill bg-cover bg-center bg-no-repeat h-[calc(100vh-148.8px)] flex items-center justify-center;
+  }
+}
