@@ -10,7 +10,7 @@ const Home = () => {
           <br />
           Rent the perfect van to make your perfect road trip.
         </p>
-        <button className="btn w-full bg-[#FF8C38]">Find your van</button>
+        <button className="btn w-1/3 bg-[#FF8C38]">Find your van</button>
       </div>
     </div>
   );

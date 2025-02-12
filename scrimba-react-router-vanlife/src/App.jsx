@@ -6,6 +6,7 @@ import Layout from "./Layout";
 // importing pages
 import Home from "./pages/Home";
 import About from "./pages/About";
+import Vans from "./pages/Vans";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
             <Route path="/" element={<Navigate to="/home" replace />} />
             <Route path="/home" element={<Home />} />
             <Route path="/about" element={<About />} />
+            <Route path="/vans" element={<Vans />} />
           </Routes>
         </main>
       </Layout>

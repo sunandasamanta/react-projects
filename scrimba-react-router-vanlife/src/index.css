@@ -45,12 +45,15 @@
 
 @layer components {
   .btn {
-    @apply px-4 py-2 rounded-lg bg-dark text-white;
+    @apply px-4 py-3 rounded-lg bg-dark text-white;
   }
   .active-nav-item {
     @apply text-dark underline font-bold duration-300;
   }
+  .hover-nav-item {
+    @apply hover:text-dark hover:underline hover:font-bold duration-1000;
+  }
   .hero {
-    @apply bg-hero-hill bg-cover bg-center bg-no-repeat h-[calc(100vh-148.8px)] flex items-center justify-center;
+    @apply bg-hero-hill bg-cover bg-center bg-no-repeat min-h-[calc(100vh-148.8px)] flex items-center justify-center;
   }
 }
