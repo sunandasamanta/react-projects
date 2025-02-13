@@ -17,7 +17,7 @@
   /* Custom font-size */
   --text-xs: 0.75rem;
   --text-sm: 1rem;
-  --text-base: 1.25rem;
+  --text-md: 1.25rem;
   --text-lg: 1.5rem;
   --text-xl: 2rem;
   --text-2xl: 2.25rem;
@@ -54,6 +54,18 @@
     @apply hover:text-dark hover:underline hover:font-bold duration-1000;
   }
   .hero {
-    @apply bg-hero-hill bg-cover bg-center bg-no-repeat min-h-[calc(100vh-148.8px)] flex items-center justify-center;
+    @apply bg-hero-hill bg-cover bg-center bg-no-repeat min-h-[calc(100vh-125px)] sm:min-h-[calc(100vh-148.8px)] flex items-center justify-center;
+  }
+  .van-btn {
+    @apply px-3 py-1 w-max font-medium text-light rounded cursor-pointer;
+  }
+  .simple {
+    @apply bg-[#E17654] hover:bg-orange-500;
+  }
+  .rugged {
+    @apply bg-[#115E59] hover:bg-teal-700;
+  }
+  .luxury {
+    @apply bg-dark hover:bg-gray-700;
   }
 }

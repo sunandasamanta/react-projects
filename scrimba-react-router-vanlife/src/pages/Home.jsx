@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Home = () => {
   return (
     <div className="hero">
@@ -10,7 +12,11 @@ const Home = () => {
           <br />
           Rent the perfect van to make your perfect road trip.
         </p>
-        <button className="btn w-1/3 bg-[#FF8C38]">Find your van</button>
+        <Link to="/vans">
+          <button className="btn w-max cursor-pointer bg-[#FF8C38]">
+            Find your van
+          </button>
+        </Link>
       </div>
     </div>
   );

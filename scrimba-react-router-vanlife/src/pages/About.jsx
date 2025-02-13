@@ -1,7 +1,7 @@
 
 const About = () => {
   return (
-    <div className="flex flex-col items-center min-h-[calc(100vh-148.8px)]">
+    <div className="flex flex-col items-center min-h-[calc(100vh-124.8px)] sm:min-h-[calc(100vh-148.8px)]">
       <img src="./vanlife-image-54.png" alt="Person on Van" />
       <div className="text-dark w-11/12 sm:w-1/2 sm:max-w-[549px] mx-auto mt-6 mb-10">
         <h2 className="font-bold text-xl m-0 mb-5">
@@ -18,7 +18,7 @@ const About = () => {
           Our team is full of vanlife enthusiasts who know firsthand the magic
           of touring the world on 4 wheels.
         </p>
-        <div className="p-6 w-full bg-amber-400 rounded-xl mt-6">
+        <div className="p-6 w-full bg-orange-300 rounded-xl mt-6">
           <h3 className="text-dark font-bold mb-4">
           Your destination is waiting.
           <br />

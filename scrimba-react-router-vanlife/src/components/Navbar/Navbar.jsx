@@ -2,7 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <nav className="flex p-6 justify-between items-center">
+    <nav className="flex p-3 sm:p-6 justify-between items-center">
       <div className="font-bold text-xl text-black">
         <Link className="" to="/">
           #VANLIFE
