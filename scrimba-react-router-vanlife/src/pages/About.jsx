@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 const About = () => {
   return (
@@ -10,7 +11,7 @@ const About = () => {
         <p className="text-sm">
           Our mission is to enliven your road trip with the perfect travel van
           rental. Our vans are recertified before each trip to ensure your
-          travel plans can go off without a hitch. 
+          travel plans can go off without a hitch.
           <br />
           (Hitch costs extra 😉)
           <br />
@@ -20,13 +21,13 @@ const About = () => {
         </p>
         <div className="p-6 w-full bg-orange-300 rounded-xl mt-6">
           <h3 className="text-dark font-bold mb-4">
-          Your destination is waiting.
-          <br />
-          Your van is ready.
+            Your destination is waiting.
+            <br />
+            Your van is ready.
           </h3>
-          <button className="btn">
-            Explore our vans
-          </button>
+          <Link to="/vans">
+            <button className="btn cursor-pointer">Explore our vans</button>
+          </Link>
         </div>
       </div>
     </div>

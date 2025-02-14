@@ -2,7 +2,7 @@ import { Link, useParams } from "react-router-dom";
 import { useCallback, useEffect, useState } from "react";
 
 // components
-import Button from "../components/Button/Button";
+import Button from "../../components/Button/Button";
 
 const VanDetail = () => {
   const [van, setVan] = useState({});
@@ -21,7 +21,7 @@ const VanDetail = () => {
   useEffect(() => {
     fetchVan();
   }, []);
-  return (
+  return van ?
     <div className="p-8 w-full">
       <Link className="flex items-center gap-1" to="/vans">
         <svg
@@ -42,7 +42,7 @@ const VanDetail = () => {
       <div className="my-6 mx-auto w-full sm:w-1/2 md:w-1/3 xl:max-w-[600px]">
         <div className="overflow-hidden rounded-lg w-full mb-6">
           <img
-            className="rounded-lg aspect-square hover:scale-105 duration-300"
+            className="rounded-lg hover:scale-105 duration-300"
             src={van.imageUrl}
             alt={van.name}
           />
@@ -53,9 +53,11 @@ const VanDetail = () => {
           <span className="font-bold">${van.price}</span>/day
         </p>
         <p className="">{van.description}</p>
+        <button className={`van-btn ${van.type} w-full mt-6 py-3 text-md`}>
+          <Link to="/checkout">Rent this van</Link>
+        </button>
       </div>
-    </div>
-  );
+    </div> : <h1 className="">Loading...</h1>
 };
 
 export default VanDetail;

@@ -10,6 +10,14 @@ const Navbar = () => {
       </div>
       <div className="flex gap-x-4 text-nav">
         <NavLink
+          to="/host"
+          className={({ isActive }) =>
+            isActive ? `active-nav-item` : "hover-nav-item"
+          }
+        >
+          Host
+        </NavLink>
+        <NavLink
           className={({ isActive }) =>
             isActive ? `active-nav-item` : "hover-nav-item"
           }
