@@ -10,19 +10,25 @@ const HostLayout = () => {
       <nav className="flex gap-x-4 text-">
         <NavLink
           to="/host"
-          className={(isActive) => (isActive ? "font-bold" : "text-red-800")}
+          className={({ isActive }) =>
+            isActive ? `active-nav-item` : "hover-nav-item"
+          }
         >
           Dashboard
         </NavLink>
         <NavLink
           to="/host/reviews"
-          className={(isActive) => (isActive ? "font-bold" : "text-red-800")}
+          className={({ isActive }) =>
+            isActive ? `active-nav-item` : "hover-nav-item"
+          }
         >
           Reviews
         </NavLink>
         <NavLink
           to="/host/income"
-          className={(isActive) => (isActive ? "font-bold" : "text-red-800")}
+          className={({ isActive }) =>
+            isActive ? `active-nav-item` : "hover-nav-item"
+          }
         >
           Income
         </NavLink>

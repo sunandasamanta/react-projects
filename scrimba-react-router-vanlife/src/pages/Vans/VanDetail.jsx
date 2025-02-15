@@ -39,7 +39,7 @@ const VanDetail = () => {
         </svg>
         <p className="underline">Back to all vans</p>
       </Link>
-      <div className="my-6 mx-auto w-full sm:w-1/2 md:w-1/3 xl:max-w-[600px]">
+      <div className="py-6 mx-auto w-full sm:w-1/2 md:w-1/3 xl:max-w-[600px]">
         <div className="overflow-hidden rounded-lg w-full mb-6">
           <img
             className="rounded-lg hover:scale-105 duration-300"

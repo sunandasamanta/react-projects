@@ -6,11 +6,13 @@ import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 const Layout = ({ children }) => {
   return (
-    <>
+    <div className="min-h-screen flex flex-col relative">
       <Navbar />
-      <Outlet />
+      <main>
+        <Outlet />
+      </main>
       <Footer />
-    </>
+    </div>
   );
 };
 
