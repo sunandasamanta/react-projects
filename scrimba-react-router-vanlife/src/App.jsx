@@ -18,7 +18,7 @@ import HostVanDetail from "./pages/Host/HostVans/HostVanDetail";
 import HostVanInfo from "./pages/Host/HostVans/HostVanInfo";
 import HostVanPricing from "./pages/Host/HostVans/HostVanPricing";
 import HostVanPhotos from "./pages/Host/HostVans/HostVanPhotos";
-
+import NotFound from "./pages/NotFound/NotFound";
 
 const App = () => {
   return (
@@ -41,6 +41,7 @@ const App = () => {
               <Route path="photos" element={<HostVanPhotos />} />
             </Route>
           </Route>
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>
