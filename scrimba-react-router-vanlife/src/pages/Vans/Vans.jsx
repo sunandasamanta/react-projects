@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import VanCard from "../../components/VanCard/VanCard";
 import { Link } from "react-router-dom";
 
 const Vans = () => {
   const [vans, setVans] = useState([]);
-  const fetchVans = async () => {
+  const fetchVans = useCallback(async () => {
     try {
       const res = await fetch("/api/vans");
       const data = await res.json();
@@ -12,7 +12,7 @@ const Vans = () => {
     } catch (error) {
       console.log(error);
     }
-  };
+  });
   useEffect(() => {
     fetchVans();
   }, []);

@@ -47,7 +47,7 @@ const VanDetail = () => {
             alt={van.name}
           />
         </div>
-        <Button buttonText={van.type ?? `simple`} />
+        <Button buttonText={van.type} />
         <h3 className="font-bold my-4 text-xl">{van.name}</h3>
         <p className="text-md mb-4">
           <span className="font-bold">${van.price}</span>/day

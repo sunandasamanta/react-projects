@@ -26,6 +26,7 @@ const Navbar = () => {
           About
         </NavLink>
         <NavLink
+          end
           className={({ isActive }) =>
             isActive ? `active-nav-item` : "hover-nav-item"
           }

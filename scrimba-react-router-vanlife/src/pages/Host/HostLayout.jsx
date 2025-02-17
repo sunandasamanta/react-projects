@@ -1,15 +1,14 @@
 import React from "react";
-import { NavLink, Outlet, useParams } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 
 const HostLayout = () => {
-  const params = useParams();
-  console.log(params);
   
   return (
     <>
-      <nav className="flex gap-x-4 text-">
+      <nav className="flex gap-x-4 p-6">
         <NavLink
-          to="/host"
+          end
+          to="."
           className={({ isActive }) =>
             isActive ? `active-nav-item` : "hover-nav-item"
           }
@@ -17,20 +16,28 @@ const HostLayout = () => {
           Dashboard
         </NavLink>
         <NavLink
-          to="/host/reviews"
-          className={({ isActive }) =>
-            isActive ? `active-nav-item` : "hover-nav-item"
-          }
-        >
-          Reviews
-        </NavLink>
-        <NavLink
-          to="/host/income"
+          to="income"
           className={({ isActive }) =>
             isActive ? `active-nav-item` : "hover-nav-item"
           }
         >
           Income
+        </NavLink>
+        <NavLink
+          to="vans"
+          className={({ isActive }) =>
+            isActive ? `active-nav-item` : "hover-nav-item"
+          }
+        >
+          Vans
+        </NavLink>
+        <NavLink
+          to="reviews"
+          className={({ isActive }) =>
+            isActive ? `active-nav-item` : "hover-nav-item"
+          }
+        >
+          Reviews
         </NavLink>
       </nav>
       <Outlet />
