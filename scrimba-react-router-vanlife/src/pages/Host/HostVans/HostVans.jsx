@@ -24,7 +24,7 @@ const HostVans = () => {
       {hostVans ? (
         <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3 items-center">
           {hostVans.map((van) => (
-            <Link to={`${van.id}`} key={van.id}>
+            <Link to={van.id} key={van.id}>
               <HostVanCard key={van.id} van={van} />
             </Link>
           ))}

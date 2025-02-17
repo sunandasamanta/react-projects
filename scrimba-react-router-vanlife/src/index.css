@@ -68,4 +68,7 @@
   .luxury {
     @apply bg-dark hover:bg-gray-700;
   }
+  .clear {
+    @apply bg-red-500 hover:bg-red-300;
+  }
 }
