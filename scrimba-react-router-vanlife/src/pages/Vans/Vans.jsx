@@ -2,22 +2,19 @@ import { useCallback, useEffect, useState } from "react";
 import VanCard from "../../components/VanCard/VanCard";
 import { Link, useSearchParams } from "react-router-dom";
 import Button from "../../components/Button/Button";
+import { getVans } from "../../api";
 
 const Vans = () => {
-  const [vans, setVans] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
-
-  const fetchVans = useCallback(async () => {
-    try {
-      const res = await fetch("/api/vans");
-      const data = await res.json();
-      setVans(data.vans);
-    } catch (error) {
-      console.log(error);
-    }
-  });
+  const [vans, setVans] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    async function fetchVans() {
+      const data = await getVans();
+      setVans(data);
+      setLoading(false);
+    }
     fetchVans();
   }, []);
 
@@ -28,6 +25,9 @@ const Vans = () => {
     ? vans.filter((van) => van.type === typeFilter)
     : vans;
 
+  if (loading) {
+    return <h1>Loading...</h1>;
+  }
   return (
     <>
       <h1 className="text-dark mx-8 text-2xl font-bold">
@@ -39,23 +39,26 @@ const Vans = () => {
           buttonText="Simple"
         />
         <Button
-          onClick={() => setSearchParams({ type: "luxury" })}
+          onClick={() => setSearchParams({ type: "rugged" })}
           buttonText="Rugged"
         />
         <Button
-          onClick={() => setSearchParams({ type: "rugged" })}
+          onClick={() => setSearchParams({ type: "luxury" })}
           buttonText="Luxury"
         />
         {typeFilter && (
           <Button onClick={() => setSearchParams("")} buttonText="Clear" />
         )}
       </nav>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-center">
+      <div className="grid grid-cols-1 m-12 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 justify-center">
         {displayedVans.map((van) => (
           <Link
             key={van.id}
             to={van.id}
-            state={{ search: searchParams.toString() }}
+            state={{
+              search: searchParams.toString(),
+              type: typeFilter,
+            }}
           >
             <VanCard
               imgSrc={van.imageUrl}

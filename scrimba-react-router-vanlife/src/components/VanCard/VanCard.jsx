@@ -11,9 +11,9 @@ const VanCard = ({ imgSrc, vanName, rent, vanType }) => {
         />
       </div>
       <div className="grid sm:flex sm:justify-between mt-6">
-        <p className="font-bold">{vanName}</p>
+        <p className="font-bold text-xl">{vanName}</p>
         <p className="">
-          <span className="font-bold">${rent}</span>
+          <span className="font-bold text-lg">${rent}</span>
           <br className="hidden sm:inline-block" />
           /day
         </p>

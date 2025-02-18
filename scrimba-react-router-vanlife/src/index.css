@@ -53,8 +53,11 @@
   .hover-nav-item {
     @apply hover:text-dark hover:underline hover:font-bold duration-1000;
   }
-  .hero {
-    @apply bg-hero-hill bg-cover bg-center bg-no-repeat min-h-[calc(100vh-131px)] sm:min-h-[calc(100vh-155px)] flex items-center justify-center;
+  .box-container {
+    @apply min-h-[calc(100vh-131px)] sm:min-h-[calc(100vh-155px)] flex flex-col items-center justify-center p-6;
+  }
+  .hero-bg {
+    @apply bg-hero-hill bg-cover bg-center bg-no-repeat;
   }
   .van-btn {
     @apply px-3 py-1 w-max font-medium text-light rounded cursor-pointer;

@@ -4,32 +4,31 @@ import { useCallback, useEffect, useState } from "react";
 // components
 import Button from "../../components/Button/Button";
 
+//
+import { getVan } from "../../api";
+
 const VanDetail = () => {
   const [van, setVan] = useState({});
   const param = useParams();
   const location = useLocation();
-  console.log(location)
-  const fetchVan = useCallback(async () => {
-    try {
-      const res = await fetch(`/api/vans/${param.id}`);
-      const data = await res.json();
-      setVan(data.vans);
-    } catch (error) {
-      console.log(error);
-    }
-  }, [param.id]);
 
   useEffect(() => {
+    async function fetchVan() {
+      const data = await getVan(param.id);
+      setVan(data);
+    }
     fetchVan();
   }, []);
+  const search = `..?${location.state?.search}` || "..";
+  const type = location.state?.type || "all"
   return van ? (
     <div className="p-8 w-full">
       <Link 
       className="flex items-center gap-1" 
-      to={`..?${location.state?.search}` || ".."}
+      to={search}
       relative="path"
       >
-        &larr;<p className="underline">Back to all vans</p>
+        &larr;<p className="underline">Back to {type} vans</p>
       </Link>
       <div className="py-6 mx-auto w-full sm:w-1/2 md:w-1/3 xl:max-w-[600px]">
         <div className="overflow-hidden rounded-lg w-full mb-6">

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
-    <div className="hero">
+    <div className="box-container hero-bg">
       <div className="w-11/12 sm:w-1/2 text-white">
         <h3 className="font-bold mb-6 text-2xl">
           You got the travel plans, we got the travel vans.
